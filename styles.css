@@ -1,0 +1,756 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/roboto-font/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/roboto-font/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/Nunito-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/Nunito-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+/* General Reset Styles */
+body, h1, h2, h3, p, ul, li, a, img, button, form, input, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+/* General Body Styles */
+body {
+  background-color: #121212;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+.header {
+  background-color: #333;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: #00aaff; /* Change as needed */
+  text-decoration: none;
+  position: relative;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #7267ec; /* Change as needed */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffa726;
+}
+
+/* Hero Section Styles */
+/* Hero Section Styles with Video Background */
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden; /* Added to contain the video within the section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures video covers the whole area */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Ensures video stays in the background */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* Ensures content stays above the video */
+  text-align: center;
+  animation: fadeInScaleUp 2s ease-out;
+}
+
+/* Updated Font Sizing for Hero Content */
+.hero-content h1 {
+  font-size: 3vw; /* Responsive font size */
+  /* ... other existing styles ... */
+}
+
+.hero-content p {
+  font-size: 1.5vw;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+
+
+/* Keyframes and Slide-up Animation */
+/* ... existing styles ... */
+
+/* Media Queries for Adjusting Font Size on Different Screens */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 5vw; /* Larger font size for smaller screens */
+    }
+    .hero-content p {
+        font-size: 3vw; /* Larger font size for smaller screens */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 4.5vw; /* Adjust as needed */
+    }
+    .hero-content p {
+        font-size: 2.5vw; /* Adjust as needed */
+    }
+}
+
+@media (min-width: 1025px) {
+    .hero-content h1 {
+        font-size: 4vw; /* Adjust as needed */
+    }
+    .hero-content p {
+        font-size: 2vw; /* Adjust as needed */
+    }
+}
+/*******************************************************************************/
+
+@keyframes fadeInScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-content {
+  animation: fadeInScaleUp 2s ease-out;
+}
+/* for sliding up */
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp 1s ease-out;
+}
+
+
+
+
+
+/* Button Styles */
+.cta-button, .listen-button, .shop-button, .buy-button, .subscribe-button, .submit-button {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #ff9800;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover, .listen-button:hover, .shop-button:hover, .buy-button:hover, .subscribe-button:hover, .submit-button:hover {
+  background-color: #ffa726;
+}
+
+/* Generic Section Styles */
+.section {
+  padding: 50px 20px;
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Specific Section for the members*/
+.members-container {
+  display: flex;
+  overflow-x: auto;
+  justify-content: center; /* Horizontally center items */
+  align-items: center; /* Vertically center items (if needed) */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.member-container {
+  position: relative;
+  text-align: center;
+}
+
+
+.member-container img {
+  width: 300px;
+  height: 300px;
+  display: block;
+  border-radius: 15px; /* Optional: for rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  filter: grayscale(100%); /* Make images grayscale initially */
+  animation: float 3s ease-in-out infinite;
+}
+
+.member-container img:hover {
+  transform: scale(1.1); /* Slightly enlarge image on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for depth */
+  filter: grayscale(0); /* Full color on hover */
+}
+
+.member-name {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.member-container:hover .member-name {
+  display: block;
+}
+
+.member-details {
+  padding: 20px;
+  /* Additional styling as needed */
+}
+/***************************************************************************************/
+
+/* Specific Section Styles (Music, Clothing, Merchandise, Gallery, etc.) */
+.music-container, .clothing-container, .merchandise-container, .gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.music-card, .clothing-item, .merch-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 300px;
+}
+
+.music-card img, .clothing-item img, .merch-item img, .gallery-item img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.music-card h3, .clothing-item h3, .merch-item h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.music-card p, .clothing-item p, .merch-item p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Form Styles */
+.signup-form, .contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signup-form input, .contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.signup-form input:focus, .contact-form input:focus, .contact-form textarea:focus {
+  outline: none;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.footer-nav ul li {
+  margin-right: 20px;
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* Contact Info Styles */
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+}
+
+/* Font Styles */
+@font-face {
+  font-family: 'HeaderFont';
+  src: url('fonts/logo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'BodyFont';
+  src: url('fonts/comic_andy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'HERO'; /* Give a name to your font */
+  src: url('fonts/hero-font/SuperReduce-Ealv8.ttf') format('truetype'); /* Path to your .ttf file */
+}
+
+
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'HERO', sans-serif; /* Fallback to sans-serif if custom font fails to load */
+}
+
+
+h2, h3, a {
+  font-family: 'HeaderFont', Arial, sans-serif;
+}
+
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+/***************************************************/
+/* Total scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar */
+}
+
+/* Handle of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, purple, firebrick); /* Gradient from purple to fire orange */
+  border-radius: 5px; /* Handle border radius */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, darkviolet, darkorange); /* Darker gradient on hover */
+}
+
+/**********************************************************************/
+/*ripple effect*/
+
+.ripple-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-button .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design Adjustments (if needed) */
+
+
+/* MUSIC html */
+
+#albums {
+  text-align: center;
+  padding: 20px;
+}
+
+.album-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.album {
+  width: 200px; /* Adjust as needed */
+  padding: 10px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.album img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.album h3 {
+  margin-top: 10px;
+  color: #fff;
+}
+
+.album p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.listening-links a {
+  color: #00aaff;
+  text-decoration: none;
+  padding: 5px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+#members-music {
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+}
+
+.member-carousel {
+  display: flex;
+  overflow-x: auto;
+}
+
+.member {
+  flex: 0 0 auto;
+  width: 200px;
+  margin-right: 20px;
+}
+
+.member img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.member p {
+  font-size: 14px;
+}
+
+.member-links a {
+  color: #00aaff;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+#song-of-the-month {
+  text-align: center;
+  padding: 20px;
+  background-color: #121212;
+  color: #fff;
+}
+
+.featured-song img {
+  width: 200px; /* Adjust as needed */
+  height: auto;
+  border-radius: 10px;
+}
+
+.featured-song p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
+/***************************************************/
+/* Styles for Artist Pages */
+/***************************************************/
+
+/* Main Artist Information Section */
+.artist-container {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.artist-container h3, .artist-container p, .artist-container ul {
+  margin-bottom: 15px;
+}
+
+.artist-container ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.artist-container a {
+  color: #ffa726;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Albums Section */
+.album-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.album {
+  text-align: center;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+}
+
+.album img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.album h3 {
+  margin: 10px 0;
+}
+
+/* Featured Song Section */
+.featured-song {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.featured-song img {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+/* Merch Display Section Styles */
+.merch-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.merch-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.merch-item {
+  text-align: center;
+  flex: 1 1 300px;
+  max-width: 300px;
+}
+
+.merch-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.album-preview {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.album-cover {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.benefits-list {
+  list-style: none;
+  padding-left: 0;
+}
+.slider {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: auto;
+  display: none;
+  border-radius: 10px;
+}
+
+.slide.active {
+  display: block;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px;
+  margin-top: -22px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.3s ease;
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(0,0,0,0.5);
+  user-select: none;
+  z-index: 10;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}

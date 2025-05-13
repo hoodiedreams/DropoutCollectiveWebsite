@@ -140,7 +140,7 @@
       <li>🔒 Early access to new drops and announcements</li>
       <li>💬 Safe space for feedback, promotion, and support</li>
     </ul>
-    <a href="https://discord.gg/YOUR_INVITE_LINK" class="cta-button" target="_blank">Join the Discord</a>
+    <a href="https://buy.stripe.com/4gw6pcam34v0f60eUU" class="cta-button" target="_blank" rel="noopener noreferrer">Join the Club</a>
   </div>
 </section>
 
@@ -201,10 +201,14 @@
           <div class="section-content">
             <h2>Newsletter Signup</h2>
             <p>Stay updated! Sign up for our newsletter for the latest news, releases, and updates.</p>
-            <form class="signup-form">
-              <input type="email" placeholder="Enter your email">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdP_GUyfg0PmcIzFzHqfvmPghQtI3dspULvSOGU_pXzKpTQzg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+              <input name="entry.1184562356" type="email" placeholder="Enter your email" required>
               <button type="submit" class="subscribe-button">Subscribe</button>
             </form>
+            <p id="newsletterThankYouMsg" style="display:none; color: #00ffcc; font-weight: bold; margin-top: 10px;">
+              🎉 Thanks for subscribing!
+            </p>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
           </div>
         </section>
 
@@ -213,16 +217,15 @@
           <div class="section-content">
             <h2>Contact / Booking Information</h2>
             <p>For collaboration, product reviews and/or bookings, contact us through the form below or via email or phone.</p>
-            <form class="contact-form">
-              <input type="text" placeholder="Name">
-              <input type="email" placeholder="Email">
-              <textarea placeholder="Message"></textarea>
+            <form action="https://formspree.io/f/movdpaby" method="POST" class="contact-form">
+              <input type="text" name="name" placeholder="Name" required>
+              <input type="email" name="email" placeholder="Email" required>
+              <textarea name="message" placeholder="Message" required></textarea>
               <button type="submit" class="submit-button">Send Message</button>
             </form>
-            <div class="contact-info">
-              <p>Email: example@email.com</p>
-              <p>Phone: +123456789</p>
-            </div>
+            <p id="contactThankYouMsg" style="display:none; color: #00ffcc; font-weight: bold; margin-top: 10px;">
+              🎉 Thanks for reaching out! We'll get back to you soon.
+            </p>
           </div>
         </section>
 

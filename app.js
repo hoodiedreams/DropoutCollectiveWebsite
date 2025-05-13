@@ -58,3 +58,46 @@ if (prev && next && slides.length > 0) {
   prev.addEventListener('click', prevSlide);
   showSlide(currentSlide);
 }
+
+// Newsletter form thank-you message logic
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('#newsletter form');
+  const newsletterThankYouMsg = document.getElementById('newsletterThankYouMsg');
+  const iframe = document.getElementById('hidden_iframe');
+
+  if (form && newsletterThankYouMsg && iframe) {
+    form.addEventListener('submit', () => {
+      setTimeout(() => {
+        form.reset();
+        newsletterThankYouMsg.style.display = 'block';
+      }, 500);
+    });
+  }
+});
+
+// Contact form thank-you message logic (Formspree)
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.querySelector('.contact-form');
+  const contactThankYou = document.getElementById('contactThankYouMsg');
+
+  if (contactForm && contactThankYou) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        contactThankYou.style.display = "block";
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  }
+});

@@ -405,6 +405,24 @@ body {
   text-decoration: none;
   color: #fff;
   font-size: 0.9rem;
+  padding: 6px 10px;                 /* give it a tappable area */
+  border-radius: 8px;                 /* rounded pill-ish */
+  transition:
+    color 0.18s ease,
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.footer-nav ul li a:hover {
+  background-color: rgba(255,255,255,0.08);  /* subtle darken on hover */
+  color: #ffa726;                            /* match your accent */
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.10) inset;
+}
+
+.footer-nav ul li a:focus-visible {
+  outline: 2px solid #a88bff;                /* accessible focus ring */
+  outline-offset: 2px;
+  border-radius: 8px;
 }
 
 /* Contact Info Styles */
@@ -842,4 +860,135 @@ html{
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
+
+
+
+/* ===== Music page (additions) ===== */
+/* Centered hero title/subtitle for music page */
+.center-title {
+  text-align: center;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.4rem, 5vw, 3.6rem); /* bigger, responsive */
+  line-height: 1.1;                      /* tighter header rhythm */
+}
+.center-subtitle {
+  text-align: center;
+  opacity: 0.9;
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+}
+
+/* Featured / Now Playing layout */
+.now-playing-wrap {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  .now-playing-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+.np-cover {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.np-track { margin: 0.5rem 0 1rem; }
+
+.platform-links {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px;
+}
+.platform-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 14px; border: 1px solid currentColor; border-radius: 999px;
+  text-decoration: none; font-weight: 600; opacity: 0.95;
+}
+
+/* Filter pills */
+.filter-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 6px;              /* a bit of breathing room */
+}
+.pill {
+  color: #cbb8ff;                                   /* brighter text */
+  border: 2px solid rgba(168,139,255,0.70);         /* higher-contrast border */
+  background: rgba(168,139,255,0.08);               /* subtle tint for visibility */
+  border-radius: 999px;
+  padding: 10px 16px;                                /* slightly larger click target */
+  cursor: pointer;
+  font-weight: 700;                                  /* bolder label */
+  letter-spacing: 0.02em;
+  transition:
+    transform 0.12s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    color 0.15s ease;
+}
+.pill:hover {
+  background: rgba(168,139,255,0.16);
+  border-color: rgba(168,139,255,0.95);
+  box-shadow: 0 0 0 3px rgba(168,139,255,0.12);
+}
+.pill.active {
+  transform: translateY(-1px);
+  background: rgba(168,139,255,0.22);               /* stronger fill when active */
+  color: #ffffff;
+  border-color: #a88bff;
+  box-shadow: 0 6px 20px rgba(168,139,255,0.18);
+}
+
+/* Release Grid */
+.release-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(12, 1fr);
+}
+@media (max-width: 1100px) {
+  .release-grid { grid-template-columns: repeat(8, 1fr); }
+}
+@media (max-width: 720px) {
+  .release-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.release-card {
+  grid-column: span 4; /* 3-across on desktop, 2 on tablet, 1 on mobile */
+  display: flex; flex-direction: column;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; overflow: hidden;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  min-height: 100%;
+}
+.release-card:hover { transform: translateY(-3px); }
+
+.release-cover img {
+  width: 100%; aspect-ratio: 1/1; object-fit: cover;
+  display: block;
+}
+.release-body {
+  padding: 14px 14px 16px;
+  display: grid; grid-template-rows: auto auto auto; gap: 8px;
+}
+.release-title { margin: 0; }
+.release-artist { margin: 0; opacity: 0.85; }
+
+.release-actions {
+  display: flex; gap: 10px; margin-top: 6px;
+}
+.icon-link { text-decoration: none; font-size: 1.1rem; opacity: 0.95; }
+
+/* CTA stack helpers */
+.center-stack { text-align: center; }
+.small-note { opacity: 0.8; margin-top: 10px; }
+
+/* Optional: highlight active nav link on current page */
+.nav-links a.active { text-decoration: underline; text-underline-offset: 6px; }
 

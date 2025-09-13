@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Archives — The Dropout Collective</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo"><a href="index.html#hero">Dropout</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a class="active" href="music.html">Music</a></li>
+        <li><a href="https://dropout.vip" target="_blank" rel="noopener">Dropout</a></li>
+        <li><a href="index.html#merch">Merch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero / Title -->
+  <section class="section" id="music-hero">
+    <div class="section-content">
+      <h1 class="center-title">Music Archives</h1>
+      <p class="center-subtitle">Exclusive drops, collabs, and community-made sounds.</p>
+    </div>
+  </section>
+
+  <!-- Featured / Now Playing -->
+  <section class="section" id="now-playing">
+    <div class="section-content now-playing-wrap">
+      <div class="np-left">
+        <img src="img/album_cover.jpeg" alt="Collapsed Realities Cover" class="np-cover" />
+      </div>
+      <div class="np-right">
+        <h2>Unreleased</h2>
+        <p class="np-track"><strong>Walking a11 alone</strong> — Hoodie Dreams</p>
+        <!-- If you have a preview mp3, drop it in /audio and update src -->
+        <audio id="player" controls autoplay loop style="width:100%">
+            <source src="audio/Walkinga11alone.m4a" type="audio/mp4" />
+            Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spotify Embed -->
+<section class="section" id="spotify">
+  <div class="section-content center-stack">
+    <h2>Listen on Spotify</h2>
+    <iframe data-testid="embed-iframe" style="border-radius:12px"
+      src="https://open.spotify.com/embed/artist/1EYqsOJbKTsTjFBshxL8i6?utm_source=generator"
+      width="100%" height="352" frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+  <!-- Filters -->
+  <section class="section" id="filters">
+    <div class="section-content filter-row">
+      <button class="pill active" data-filter="all">All</button>
+      <button class="pill" data-filter="single">Singles</button>
+      <button class="pill" data-filter="album">Albums/EPs</button>
+      <button class="pill" data-filter="collab">Collabs</button>
+    </div>
+  </section>
+
+  <!-- Release Grid -->
+  <section class="section" id="releases">
+    <div class="section-content">
+      <div class="release-grid" id="releaseGrid">
+        <!-- CARD -->
+        <article class="release-card" data-type="single">
+          <div class="release-cover">
+            <img src="img/hoodie_and_fyeward.png" alt="Hoodie Dreams x TRU$T — Night Drive" />
+          </div>
+          <div class="release-body">
+            <h3 class="release-title">Night Drive</h3>
+            <p class="release-artist">Hoodie Dreams × TRU$T</p>
+            <div class="release-actions">
+              <a href="#" class="icon-link" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+              <a href="#" class="icon-link" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+              <a href="#" class="icon-link" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="release-card" data-type="album">
+          <div class="release-cover">
+            <img src="img/album_cover.jpeg" alt="Collapsed Realities — Album" />
+          </div>
+          <div class="release-body">
+            <h3 class="release-title">Collapsed Realities</h3>
+            <p class="release-artist">Hoodie Dreams &amp; TRU$T</p>
+            <div class="release-actions">
+              <a href="#" class="icon-link"><i class="fab fa-spotify"></i></a>
+              <a href="#" class="icon-link"><i class="fab fa-apple"></i></a>
+              <a href="#" class="icon-link"><i class="fab fa-soundcloud"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="release-card" data-type="collab">
+          <div class="release-cover">
+            <img src="img/steven_char.PNG" alt="StevenCharles — Skyline (ft. Hoodie Dreams)" />
+          </div>
+          <div class="release-body">
+            <h3 class="release-title">Skyline (ft. Hoodie Dreams)</h3>
+            <p class="release-artist">StevenCharles</p>
+            <div class="release-actions">
+              <a href="#" class="icon-link"><i class="fab fa-spotify"></i></a>
+              <a href="#" class="icon-link"><i class="fab fa-apple"></i></a>
+              <a href="#" class="icon-link"><i class="fab fa-soundcloud"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="release-card" data-type="single">
+          <div class="release-cover">
+            <img src="img/hoodie_with_sword.jpeg" alt="Hoodie Dreams — Static Bloom" />
+          </div>
+          <div class="release-body">
+            <h3 class="release-title">Static Bloom</h3>
+            <p class="release-artist">Hoodie Dreams</p>
+            <div class="release-actions">
+              <a href="#" class="icon-link"><i class="fab fa-spotify"></i></a>
+              <a href="#" class="icon-link"><i class="fab fa-apple"></i></a>
+              <a href="#" class="icon-link"><i class="fab fa-soundcloud"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="release-card" data-type="album">
+          <div class="release-cover">
+            <img src="img/dropout_sim_tee.png" alt="TRU$T — Neon Parallax EP" />
+          </div>
+          <div class="release-body">
+            <h3 class="release-title">Neon Parallax (EP)</h3>
+            <p class="release-artist">TRU$T</p>
+            <div class="release-actions">
+              <a href="#" class="icon-link"><i class="fab fa-spotify"></i></a>
+              <a href="#" class="icon-link"><i class="fab fa-apple"></i></a>
+              <a href="#" class="icon-link"><i class="fab fa-soundcloud"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="release-card" data-type="collab">
+          <div class="release-cover">
+            <img src="img/TRUST.PNG" alt="TRU$T × StevenCharles — Comet Lines" />
+          </div>
+          <div class="release-body">
+            <h3 class="release-title">Comet Lines</h3>
+            <p class="release-artist">TRU$T × StevenCharles</p>
+            <div class="release-actions">
+              <a href="#" class="icon-link"><i class="fab fa-spotify"></i></a>
+              <a href="#" class="icon-link"><i class="fab fa-apple"></i></a>
+              <a href="#" class="icon-link"><i class="fab fa-soundcloud"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section">
+    <div class="section-content center-stack">
+      <a href="https://buy.stripe.com/4gw6pcam34v0f60eUU" class="cta-button" target="_blank" rel="noopener noreferrer">
+        Join the Collective
+      </a>
+      <p class="small-note">Members get early access to drops, stems, and collab calls.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="https://dropout.vip">Dropout</a></li>
+          <li><a href="index.html#merch">Merch</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+    <p>&copy; 2025 Hoodie Dreams. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Simple filter logic for the release grid
+    const pills = document.querySelectorAll('.pill');
+    const cards = document.querySelectorAll('.release-card');
+    pills.forEach(p => {
+      p.addEventListener('click', () => {
+        pills.forEach(x => x.classList.remove('active'));
+        p.classList.add('active');
+        const type = p.dataset.filter;
+        cards.forEach(c => {
+          if (type === 'all' || c.dataset.type === type) {
+            c.style.display = '';
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+

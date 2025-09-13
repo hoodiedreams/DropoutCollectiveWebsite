@@ -1,16 +1,13 @@
-
-  // Smooth scroll
-  document.querySelectorAll('.members-container a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-              target.scrollIntoView({
-                  behavior: 'smooth'
-              });
-          }
-      });
+// Smooth scroll only for in-page anchors (href starts with "#")
+document.querySelectorAll('.members-container a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
+});
 
 // detect scroll
   window.addEventListener('scroll', () => {
@@ -101,3 +98,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+// Make member cards navigate on click (and keyboard accessible)
+(function () {
+  var containers = document.querySelectorAll('.member-container');
+  containers.forEach(function (c) {
+    var link = c.querySelector('a.member-link');
+    if (!link) return;
+
+    // Click anywhere on the card navigates to the link (unless you clicked the link itself)
+    c.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return; // native link click
+      window.location.href = link.href;
+    });
+
+    // Keyboard accessibility
+    c.setAttribute('role', 'link');
+    if (!c.hasAttribute('tabindex')) c.setAttribute('tabindex', '0');
+    c.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        link.click();
+      }
+    });
+  });
+})();

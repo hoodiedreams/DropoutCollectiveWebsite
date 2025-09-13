@@ -1,3 +1,5 @@
+*, *::before, *::after { box-sizing: border-box; }
+
 @font-face {
   font-family: 'Roboto';
   src: url('fonts/roboto-font/Roboto-Regular.ttf') format('truetype');
@@ -598,6 +600,92 @@ html{
 /* Styles for Artist Pages */
 /***************************************************/
 
+/* Artist profile layout */
+.artist-profile {
+  max-width: 1120px;           /* wider canvas */
+  min-height: 100vh;           /* fill full screen height */
+  margin: 0 auto;
+  padding: 64px 32px;
+  display: grid;
+  grid-template-columns: minmax(220px, 420px) 1fr; /* portrait | content */
+  gap: 36px;
+  align-items: start;          /* top-align items for symmetry */
+}
+
+.artist-profile h1 {
+  grid-column: 1 / -1;         /* span both columns */
+  text-align: center;          /* centered title */
+  margin: 8px 0 24px;          /* consistent spacing */
+}
+
+.artist-profile img {
+  justify-self: center;        /* center in left column */
+  align-self: start;           /* align with top of Q&A */
+  max-width: 260px;            /* uniform portrait size */
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Q&A block styling */
+.artist-qa { max-width: 100%; }
+
+.artist-qa .qa-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 10px;
+  background: #1b1b1b;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.artist-qa dt {
+  font-weight: 700;
+  color: #ffa726;
+}
+
+.artist-qa dd {
+  margin: 0;
+  color: #eaeaea;
+}
+
+/* Back link */
+/* Fixed back link (bottom-left of viewport) */
+.artist-back-link {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 1000;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #8a2be2;
+  background: transparent;
+}
+.artist-back-link:hover,
+.artist-back-link:focus { text-decoration: underline; }
+
+/* Responsive tweaks */
+@media (max-width: 700px) {
+  .artist-profile {
+    grid-template-columns: 1fr;   /* stack */
+    padding: 40px 16px;           /* a bit tighter on phones */
+    text-align: left;
+  }
+  .artist-profile h1 {
+    text-align: left;
+    margin-bottom: 16px;
+  }
+  .artist-profile img {
+    max-width: 200px;             /* smaller portrait on mobile */
+  }
+  .artist-qa .qa-item {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Main Artist Information Section */
 .artist-container {
   text-align: center;
@@ -754,3 +842,4 @@ html{
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
+

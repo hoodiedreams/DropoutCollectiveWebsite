@@ -1,0 +1,49 @@
+<!-- Member Section -->
+<section id="members" class="section">
+    <div class="section-content">
+      <h2>MEMBERS</h2>
+      <div class="members-container">
+        <a href="#member1details"><img src="img/hoodie_characterr.PNG" alt="Member 1"></a>
+        <a href="#member2details"><img src="img/TRUST.PNG" alt="Member 2"></a>
+        <a href="#member3details"><img src="img/steven_char.PNG" alt="Member 3"></a>
+        <!-- Add more member images as needed -->
+      </div>
+    </div>
+  </section>
+
+
+
+  /* Specific Section for the members*/
+
+.members-container {
+  display: flex;
+  overflow-x: auto;
+  justify-content: center; /* Horizontally center items */
+  align-items: center; /* Vertically center items (if needed) */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.members-container a {
+  flex: none; /* Prevents flex items from growing or shrinking */
+}
+
+.members-container img {
+  width: 300px; /* Adjust the width as needed */
+  height: auto;
+  border-radius: 15px; /* Optional: for rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  filter: grayscale(100%); /* Make images grayscale initially */
+  animation: float 3s ease-in-out infinite;
+}
+
+.members-container img:hover {
+  transform: scale(1.1); /* Slightly enlarge image on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for depth */
+  filter: grayscale(0); /* Full color on hover */
+}
+
+.member-details {
+  padding: 20px;
+  /* Additional styling as needed */
+}
